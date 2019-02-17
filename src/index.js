@@ -6,7 +6,7 @@ export default {
     switch (inProps.mark.type) {
       case 'underline':
         return (
-          <span style={STYLE} {...attributes}>
+          <span style={STYLE}>
             {children}
           </span>
         );

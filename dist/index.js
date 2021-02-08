@@ -4,26 +4,53 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _react = require('react');
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+var _react2 = _interopRequireDefault(_react);
 
-var STYLE = { textDecoration: 'underline' };
+var _slateHyperscript = require('slate-hyperscript');
 
-exports.default = {
-  renderMark: function renderMark(inProps, inEditor, inNext) {
-    var children = inProps.children,
-        attributes = _objectWithoutProperties(inProps, ['children']);
+var _nextSlatePlugin = require('@jswork/next-slate-plugin');
 
-    switch (inProps.mark.type) {
-      case 'underline':
-        return React.createElement(
-          'span',
-          _extends({ style: STYLE }, attributes),
-          children
-        );
-      default:
-        return inNext();
+var _nextSlatePlugin2 = _interopRequireDefault(_nextSlatePlugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @usage:
+ * Editor.addMark(editor,'underline', true)
+ */
+
+exports.default = _nextSlatePlugin2.default.define({
+  id: 'underline',
+  type: 'format',
+  hotkey: 'mod+u',
+  serialize: {
+    input: function input(_ref, children) {
+      var el = _ref.el;
+
+      var nodeName = el.nodeName.toLowerCase();
+      if (nodeName === 'u') {
+        return (0, _slateHyperscript.jsx)('text', { underline: true }, children);
+      }
+    },
+    output: function output(_ref2) {
+      var el = _ref2.el;
+
+      var u = document.createElement('u');
+      u.appendChild(el);
+      return u;
     }
+  },
+  render: function render(_, _ref3) {
+    var attributes = _ref3.attributes,
+        children = _ref3.children,
+        leaf = _ref3.leaf;
+
+    return _react2.default.createElement(
+      'u',
+      attributes,
+      children
+    );
   }
-};
+});

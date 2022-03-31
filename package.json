@@ -2,7 +2,7 @@
   "name": "@jswork/react-full-video",
   "boilerplate": "react-full-video",
   "homepage": "https://js.work",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Full page background video for react.",
   "license": "MIT",
   "main": "dist/index.js",

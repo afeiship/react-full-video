@@ -1,7 +1,5 @@
-import noop from '@jswork/noop';
 import classNames from 'classnames';
 import React, { Component } from 'react';
-import filterProps from '@jswork/filter-react-props';
 
 const CLASS_NAME = 'react-full-video';
 
@@ -11,21 +9,16 @@ export type ReactFullVideoProps = {
    */
   className?: string;
   /**
-   * Default value.
+   * The source url.
    */
-  value?: object;
-  /**
-   * The change handler.
-   */
-  onChange?: Function;
+  src?: string;
 };
 
 export default class ReactFullVideo extends Component<ReactFullVideoProps> {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
   static defaultProps = {
-    value: null,
-    onChange: noop
+    src: 'https://lofter.lf127.net/1611821341381/jwhaideyanjing~1.mp4'
   };
 
   handleClick = () => {
@@ -33,19 +26,11 @@ export default class ReactFullVideo extends Component<ReactFullVideoProps> {
   };
 
   render() {
-    const { className, value, onChange, ...props } = this.props;
-    const theProps = filterProps(props);
+    const { className, ...props } = this.props;
 
     return (
-      <div data-component={CLASS_NAME} className={classNames(CLASS_NAME, className)} {...theProps}>
-        <video
-          autoPlay
-          preload="auto"
-          muted
-          playsInline
-          src="https://lofter.lf127.net/1611821341381/jwhaideyanjing~1.mp4"
-          loop
-        />
+      <div data-component={CLASS_NAME} className={classNames(CLASS_NAME, className)}>
+        <video autoPlay preload="auto" muted playsInline loop {...props} />
       </div>
     );
   }

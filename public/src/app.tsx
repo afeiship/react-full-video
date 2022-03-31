@@ -23,7 +23,7 @@ const Container = styled.div`
 export default (props: any) => {
   return (
     <Container>
-      <ReactFullVideo />
+      <ReactFullVideo src="https://lofter.lf127.net/1611802866186/JWmeidangyeshenrenjingtayufangjiankuishixingchen.mp4" />
       <div className="card">A nice login ui.</div>
     </Container>
   );

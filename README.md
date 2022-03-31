@@ -11,6 +11,10 @@
 npm install -S @jswork/react-full-video
 ```
 
+## videos
+- https://lofter.lf127.net/1611802866186/JWmeidangyeshenrenjingtayufangjiankuishixingchen.mp4
+- https://lofter.lf127.net/1611821341381/jwhaideyanjing~1.mp4
+
 ## usage
 1. import css
   ```scss

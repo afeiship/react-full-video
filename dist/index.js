@@ -1,56 +1,10 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _slateHyperscript = require('slate-hyperscript');
-
-var _nextSlatePlugin = require('@jswork/next-slate-plugin');
-
-var _nextSlatePlugin2 = _interopRequireDefault(_nextSlatePlugin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
- * @usage:
- * Editor.addMark(editor,'underline', true)
+ *  name: @jswork/react-full-video
+ *  description: Full page background video for react.
+ *  homepage: https://js.work
+ *  version: 1.0.0
+ *  date: 2022-03-31T14:45:26.744Z
+ *  license: MIT
  */
 
-exports.default = _nextSlatePlugin2.default.define({
-  id: 'underline',
-  type: 'format',
-  hotkey: 'mod+u',
-  serialize: {
-    input: function input(_ref, children) {
-      var el = _ref.el;
-
-      var nodeName = el.nodeName.toLowerCase();
-      if (nodeName === 'u') {
-        return (0, _slateHyperscript.jsx)('text', { underline: true }, children);
-      }
-    },
-    output: function output(_ref2) {
-      var el = _ref2.el;
-
-      var u = document.createElement('u');
-      u.appendChild(el);
-      return u;
-    }
-  },
-  render: function render(_, _ref3) {
-    var attributes = _ref3.attributes,
-        children = _ref3.children,
-        leaf = _ref3.leaf;
-
-    return _react2.default.createElement(
-      'u',
-      attributes,
-      children
-    );
-  }
-});
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("@jswork/noop"),require("classnames"),require("react"),require("@jswork/filter-react-props")):"function"==typeof define&&define.amd?define(["exports","@jswork/noop","classnames","react","@jswork/filter-react-props"],t):t((e="undefined"!=typeof globalThis?globalThis:e||self).ReactFullVideo={},e.noop,e.classNames,e.React,e.filterProps)}(this,(function(e,t,o,r,n){"use strict";function a(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var l=a(t),i=a(o),u=a(r),c=a(n),p=function(e,t){return p=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o])},p(e,t)};var s=function(){return s=Object.assign||function(e){for(var t,o=1,r=arguments.length;o<r;o++)for(var n in t=arguments[o])Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n]);return e},s.apply(this,arguments)};var f="react-full-video",d=function(e){function t(){var t=null!==e&&e.apply(this,arguments)||this;return t.handleClick=function(){console.log("click me!")},t}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Class extends value "+String(t)+" is not a constructor or null");function o(){this.constructor=e}p(e,t),e.prototype=null===t?Object.create(t):(o.prototype=t.prototype,new o)}(t,e),t.prototype.render=function(){var e=this.props,t=e.className;e.value,e.onChange;var o=function(e,t){var o={};for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&t.indexOf(r)<0&&(o[r]=e[r]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var n=0;for(r=Object.getOwnPropertySymbols(e);n<r.length;n++)t.indexOf(r[n])<0&&Object.prototype.propertyIsEnumerable.call(e,r[n])&&(o[r[n]]=e[r[n]])}return o}(e,["className","value","onChange"]),r=c.default(o);return u.default.createElement("div",s({"data-component":f,className:i.default(f,t)},r),u.default.createElement("video",{autoPlay:!0,preload:"auto",muted:!0,playsInline:!0,src:"https://lofter.lf127.net/1611821341381/jwhaideyanjing~1.mp4",loop:!0}))},t.displayName=f,t.version="1.0.0",t.defaultProps={value:null,onChange:l.default},t}(r.Component);e.default=d,Object.defineProperty(e,"__esModule",{value:!0})}));
